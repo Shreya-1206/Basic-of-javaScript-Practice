@@ -44,3 +44,35 @@ admins[2] = {id :103 , name : 'Rooh'}; //only reassign can change  the value of 
 
 console.log(users[2]);
 console.log(admins[2]);
+
+
+//equality chk
+console.log(1 === true);
+console.log(0 === false);
+console.log(0 == false);
+console.log(1 == true);
+console.log(null === undefined);
+console.log(null == undefined);
+
+console.log(10 != '10');
+console.log(20 !== '20');
+
+//realtional chk
+console.log(5 > 6);
+console.log(null >= 0); //true
+
+
+///exception Handling
+const x =90;
+const y = 70;
+try {
+    if(typeof x !== typeof y) {
+        throw  new Error('Both are not numbers')
+    }
+  var z = x + y;
+  console.log(z);  
+} catch (error) {
+    console.log('an error occured', error);
+} finally{
+   console.log("this runs whatever happens");        
+}
