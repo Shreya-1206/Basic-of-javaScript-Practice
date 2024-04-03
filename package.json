@@ -1,0 +1,13 @@
+{
+  "name": "practice_js",
+  "version": "1.0.0",
+  "description": "Practice js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Shreya",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
