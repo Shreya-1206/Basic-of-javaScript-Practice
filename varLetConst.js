@@ -39,3 +39,25 @@ let d =9; //script scope of d chk on source  code
 }
 
 console.log(d);
+
+
+///consts
+const Admin = {
+    user : "Sugu",
+    number : 11
+};
+
+Admin.number = 10;
+console.log(Admin.number);
+
+//in const we change or mutate the value of object but cannot ressign 
+
+Admin.user ="Shreya"
+console.log(Admin);
+
+const list = ["apple", "lichi", "banana"]
+// list =["grapes","mango"]; //errror
+console.log(list);
+list.push("mango");
+console.log(list);
+console.log(list[list.length - 1]);
