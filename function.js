@@ -74,3 +74,88 @@ const convertTemp= function (tempNum, converTo) {
 
 console.log(convertTemp('97', 'C')); // 15
 
+/// this.keywoord with function inside obj
+
+const persons = [
+    {
+        name :"Sugu",
+        age : 24,
+        proffession : "Data Analyst",
+        sayHi : function () {
+            return `Hey Everyone , I am ${this.name} 🙋‍♂️`
+        },
+        canDrive : function () {
+            if (this.age > 18) {
+                return `Yes, ${this.name} can drive 🚗!!`
+            }
+        },
+    }
+];
+
+persons[0].myJob = function () {
+    return `I love my job as a ${this.proffession}  🧰`;
+};
+console.log(persons[0].myJob());
+console.log(persons[0].canDrive());
+
+
+let raja= {
+    height : 165,
+    weight : 70,
+    gender : 'M',
+    age: 28
+};
+
+let sara = {
+    heigt : 155,
+    weight : 63,
+    gender : 'F',
+    age : 24
+};
+
+const calculateBmi =function () {
+    return this.weight /(this.height/100) ** 2;
+}
+
+const calculateBmr = function() {
+   if(this.gender === 'M') {
+    return 66.47 + 13.75 * this.weight + 5.009 * this.height - 6.755 * this.age;
+   }else {
+    return 655.1 + 9.563 * this.weight + 1.852 * this.height - 4.676 * this.age;
+   }
+}
+
+console.log(`Raja BMI is : ${calculateBmi.call(raja)}`);
+
+console.log(`Raja BMR is : ${calculateBmr.call(raja)}`);
+
+
+///Arror function 
+
+const area = (l,b) => Number(l) * Number(b);
+const perimeter =(l,b) => 2 *(Number(l)+Number(b));
+console.log(`Area : ${area(20,30)}`);
+console.log(`Perimeter : ${perimeter(20,30)}`);
+
+
+//this keyword doesnt have effect on arrow fn
+const obj ={
+    x :23,
+    y:89,
+    addZ : () => {
+        return this.x + this.y
+    }
+}
+console.log(obj.addZ());   ///gives Nan
+
+const obj2 ={
+    x :23,
+    y:89,
+    addZ :function () {
+        return () => this.x +this.y // we know that fucntions are first-class  objects in js so we can return a function from function
+    }
+}
+const addz = obj2.addZ(); ///here it invokes and returns the function of addz present in the obj2
+// which remembers its lexical scope  so it can access the parent context
+
+console.log(addz())  ;   //gives 112
