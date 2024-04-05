@@ -17,3 +17,21 @@ const res = [
 ];
 console.log(`Location of Odisha hotel : ${res[0].location.lat}, ${res[0].location.long}`);
 console.log(`Location of Phakhala  Resort & Spa  : ${res[1].location?.lat}, ${res[1].location?.long}`);
+
+
+//in case of arrays if an element is not present 
+
+const studentsInfo = [
+    {
+        name : "Dinesh Pandey",
+        age : 17,
+        rollNo : 1
+    },
+    {
+        name : "Rekha Sethi",
+        age : 16,
+        rollNo : 2
+    }
+];
+
+console.log(`Student Object Of Info  : ${studentsInfo[2]?.name ?? "Not Found"}`); // it will print Not
