@@ -158,4 +158,46 @@ const obj2 ={
 const addz = obj2.addZ(); ///here it invokes and returns the function of addz present in the obj2
 // which remembers its lexical scope  so it can access the parent context
 
-console.log(addz())  ;   //gives 112
+console.log(addz())  ; //gives 112
+
+//creating a obj from arrow
+
+const userInfo = (name, age, isAdmin, email) => {
+    return {
+        name,
+        age ,
+        adminStatus : isAdmin,
+        emailId :email,
+    }
+};
+
+console.log(userInfo("Shreya Ray", 23, true, "shreyaray.1206@gmail.com"));
+
+// constructor functions
+const Product = function(name,description,cost, stock )  {
+    this.name=name;
+    this.description= description;
+    this.cost= cost;
+    this.stock= stock;
+
+    let revenue =0;
+
+    this.buy = (qty) => {
+      if(qty <= this.stock) {
+        this.stock = this.stock -qty;
+        let totalCostOfOrder = qty * this.cost;
+        revenue = revenue + totalCostOfOrder;
+        console.log(`${qty} of ${this.name} : $${totalCostOfOrder} 🛍️ `)
+      }else {
+        console.log(`Sorry we are out of stock for ${this.name}`)
+      }
+    };
+
+    this.getStock =() => `We have ${this.stock} items left in Stock.`;
+    this.getRevenue = ()=>`So far our Revenue is $${revenue} for this product ${this.name}.`;
+};
+
+const borosilBottle = new Product("Borosil Bottle", "Thermosteel Water Bottle 1 Liter", 1200, 8);
+borosilBottle.buy(6);
+console.log(borosilBottle.getStock());
+console.log(borosilBottle.getRevenue());
