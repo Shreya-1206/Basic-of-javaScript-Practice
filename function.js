@@ -187,17 +187,29 @@ const Product = function(name,description,cost, stock )  {
         this.stock = this.stock -qty;
         let totalCostOfOrder = qty * this.cost;
         revenue = revenue + totalCostOfOrder;
-        console.log(`${qty} of ${this.name} : $${totalCostOfOrder} 🛍️ `)
+        console.log(`${qty} of ${this.name} : Rupees ${totalCostOfOrder} 🛍️ `)
       }else {
         console.log(`Sorry we are out of stock for ${this.name}`)
       }
     };
 
     this.getStock =() => `We have ${this.stock} items left in Stock.`;
-    this.getRevenue = ()=>`So far our Revenue is $${revenue} for this product ${this.name}.`;
+    this.getRevenue = ()=>`So far our Revenue is Rupees ${revenue} for this product ${this.name}.`;
 };
 
 const borosilBottle = new Product("Borosil Bottle", "Thermosteel Water Bottle 1 Liter", 1200, 8);
 borosilBottle.buy(6);
 console.log(borosilBottle.getStock());
 console.log(borosilBottle.getRevenue());
+
+//default parameter
+
+const calBmiWithDefaultPara = (weight = 70, height = 180) => {
+    return {
+        weight,
+        height,
+        BMI : weight/ (height/100) ** 2
+    }
+};
+
+console.log(calBmiWithDefaultPara(63, 157)) ;
