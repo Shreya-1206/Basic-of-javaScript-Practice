@@ -22,3 +22,28 @@ if(currentHour >= 0 && currentHour < 12) {
 } else {
     console.log("Good Night 🌙")
 }
+
+// let day =2;     we got error 
+
+// if(day === 1) {
+//     console.log("SUNDAY")
+// } elseif (day === 2) {
+//     console.log( "MONDAY")
+// }
+
+
+console.log(sum(2, 3));
+
+const sum = function (a, b) {
+  return a + b;
+};
+
+
+let recursion = function (counter = 0) {
+    if (counter < 10) {
+      console.log(`The value of counter is ${counter}`);
+      return recursion(counter + 1);
+    }
+  };
+  
+  recursion(5);

@@ -213,3 +213,11 @@ const calBmiWithDefaultPara = (weight = 70, height = 180) => {
 };
 
 console.log(calBmiWithDefaultPara(63, 157)) ;
+
+//ifif
+(function(a){
+    return (function(){
+      console.log(a);
+      a = 6;
+    })()
+   })(21);

@@ -58,3 +58,16 @@ switch (itemSelected) {
 }
 
 console.log(`${itemSelected} belongs to ${type}`);
+
+let ACTION = 'SAVE_USER';
+
+switch (ACTION) {
+  case 'SEND_EMAIL':
+  case 'SEND_NOTIFICATION':
+    console.log('The user was notified!');
+    break;
+  case 'ACTIVATE_USER':
+    console.log('Activate User');
+    break;
+}
+console.log(ACTION);
